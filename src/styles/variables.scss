@@ -41,7 +41,8 @@
       $container-laptop-width
     )};
   --container-padding-x: 16px;
-  --section-padding-y: 75px;
+  --section-padding-y: #{fluid(75, 40)};
 
   --transition-duration: 0.2s;
+  --transition-duration-longer: 0.4s;
 }

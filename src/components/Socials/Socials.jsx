@@ -12,7 +12,7 @@ const Socials = (props) => {
     <div className={clsx(className, "soc1als")}>
       <ul className="soc1als__list">
         {links.map(({label, iconName}, index) => (
-          <li className="soc1als__item">
+          <li key={index} className="soc1als__item">
             <Button
               className='soc1als__link'
               href="/"

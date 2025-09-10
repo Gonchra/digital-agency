@@ -10,7 +10,7 @@ export default (props) => {
     target,
     label,
     /*
-     * '' (default) | gradient
+     * '' (default) | gradient | icon-bg
      * */
     mode = '',
     isLabelHidden = false,
@@ -26,7 +26,9 @@ export default (props) => {
   const attributesByTag = isLink ? linkAttributes : buttonAttributes
   const title = isLabelHidden ? label : undefined
   const iconComponent = iconName && (
-    <Icon className="button__icon" name={iconName} hasFill={hasFillIcon} />
+    <span className="button__icon">
+       <Icon name={iconName} hasFill={hasFillIcon} />
+    </span>
   )
 
   return (

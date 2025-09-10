@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   column-gap: 0.3em;
-  padding: 20px;
+  padding: 18px 24px;
   color: var(--color-white);
   background-color: var(--color-gray-10);
   border: var(--border);
@@ -19,6 +19,26 @@
 
     @include hover {
       background: linear-gradient(180deg, var(--color-gray-30) 0%, var(--color-gray-10) 100%);
+    }
+  }
+
+  &--white {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+
+  &--icon-bg {
+    background-color: transparent;
+    border: var(--border);
+    padding: fluid-to-laptop(18, 10);
+
+    .button__icon {
+      @include flex-center(true);
+
+      padding: fluid-to-laptop(10, 6) fluid-to-laptop(20, 14);
+      background-color: var(--color-gray-10);
+      color: var(--color-white);
+      border-radius: 100px;
     }
   }
 }

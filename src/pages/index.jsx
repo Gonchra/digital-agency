@@ -1,3 +1,6 @@
+import Hero from '@/sections/Hero'
+import Reasons from '@/sections/Reasons'
+
 export const metadata = {
   title: 'Home',
   isHeaderFixed: true,
@@ -6,9 +9,8 @@ export const metadata = {
 export default () => {
   return (
     <>
-      <div className="container">
-        <h1>Home page</h1>
-      </div>
+      <Hero />
+      <Reasons />
     </>
   )
 }

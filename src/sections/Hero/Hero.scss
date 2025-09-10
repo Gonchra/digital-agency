@@ -1,3 +1,94 @@
 .hero {
-  padding-block: 50px;
+  padding-top: 103px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: var(--section-padding-y);
+
+  @include tablet {
+    padding-top: 136px;
+  }
+
+  @include tablet-above {
+    background-image: url("../../assets/images/Hero/hero-bg.png");
+  }
+
+  &__inner {
+    display: grid;
+    align-items: center;
+
+    @include tablet-above {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: 73px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(20, 12);
+
+
+    @include tablet {
+      background-image: url("../../assets/images/Hero/hero-bg.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 73px 0 34px;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    color: var(--color-gray-40);
+    line-height: 1.3;
+
+    @include tablet {
+      text-align: center;
+    }
+
+    span {
+      color: var(--color-white);
+    }
+  }
+
+  &__description {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include tablet {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include tablet {
+      align-items: center;
+    }
+
+    &-title {
+      @include fluid-text(20, 14);
+
+      color: var(--color-white);
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      column-gap: fluid-to-laptop(10, 8);
+    }
+  }
+
+  &__image-wrapper {
+    @include flex-center;
+  }
 }
