@@ -8,6 +8,11 @@
   border: var(--border);
   border-radius: 100px;
 
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+
   @include hover {
     color: var(--color-white-80);
     background-color: var(--color-gray-25);
