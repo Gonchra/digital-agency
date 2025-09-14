@@ -42,7 +42,10 @@ const Serve = () => {
     >
       <Grid columns={2}>
         {serveItems.map((serveItem, index) => (
-          <ServeCard {...serveItem} />
+          <ServeCard
+            key={index}
+            {...serveItem}
+          />
         ))}
       </Grid>
     </Section>
