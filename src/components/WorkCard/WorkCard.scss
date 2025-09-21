@@ -23,6 +23,7 @@
   &__image {
     width: fluid(200, 100);
     height: fluid(200, 100);
+    pointer-events: none;
   }
 
   &__button {

@@ -1,0 +1,37 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  width: calc(var(--container-padding-x) * 2 + var(--container-width));
+  mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+  );
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    column-gap: fluid-to-laptop(30, 20);
+    padding-right: fluid-to-laptop(30, 20);
+
+    animation-name: scrollLeft;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes scrollLeft {
+  from {
+    translate: 0%;
+  }
+  to {
+    translate: -100%;
+  }
+}

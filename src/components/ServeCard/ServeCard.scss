@@ -46,6 +46,7 @@
     z-index: 100;
     width: fluid(44, 26);
     height: fluid(44, 26);
+    pointer-events: none;
   }
 
   &__header {

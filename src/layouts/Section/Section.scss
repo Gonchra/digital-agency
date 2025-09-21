@@ -28,5 +28,6 @@
     align-items: center;
     flex-direction: column;
     row-gap: fluid(50, 20);
+    overflow: hidden;
   }
 }
