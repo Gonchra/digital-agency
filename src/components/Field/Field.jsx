@@ -11,6 +11,8 @@ export default (props) => {
      * undefined (default) | 'email' | 'textarea'
      */
     type,
+    iconName,
+    hasFillIcon,
     placeholder,
     isRequired,
     inputMode,
@@ -29,11 +31,6 @@ export default (props) => {
     <div className={clsx('field', className)}>
       <label className="field__label" htmlFor={id}>
         {label}
-        {isRequired && (
-          <span className="field__required-star" aria-hidden="true">
-            &nbsp;*
-          </span>
-        )}
       </label>
       <Component
         className="field__control"

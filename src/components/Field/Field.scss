@@ -1,49 +1,44 @@
 .field {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  row-gap: fluid-to-laptop(16, 12);
+  position: relative;
+  width: 100%;
+  max-width: 434px;
 
-  &__label {
-    font-size: fluid-to-laptop(18, 16);
-    font-weight: 700;
+  &:has(.field__control:not(:placeholder-shown)) .field__label {
+    scale: 0.8;
+    translate: -2.75em -3em;
     color: var(--color-white);
   }
 
-  &__required-star {
-    color: var(--color-accent);
+  &__label {
+    font-size: fluid-to-laptop(18, 16);
+    color: var(--color-gray-40);
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    translate: 0 -50%;
   }
 
   &__control {
     width: 100%;
-    max-width: 300px;
-    height: fluid-to-laptop(67, 53);
-    padding-inline: fluid-to-laptop(20, 16);
+    padding: 18px 24px;
+    height: 60px;
+    background-color: var(--color-gray-10);
     color: var(--color-white);
-    background-color: var(--color-black);
-    border: var(--border-width-m) solid var(--color-white);
-    border-radius: var(--border-radius);
+    border: var(--border);
+    border-radius: 100px;
 
-    @include laptop {
-      border-radius: var(--border-radius-xs);
-    }
-
-    @include hover {
-      border-color: var(--color-white);
-    }
-
-    &:user-invalid {
-      border-color: var(--color-accent);
-    }
-
-    &:disabled {
-      @include disabled;
-    }
-
-    &::placeholder {
-      color: var(--color-gray);
+    &[type="search"] {
+      &:placeholder-shown {
+        padding-left: calc(18px * 2 + 24px);
+        background-image: url("../../assets/icons/search.svg");
+        background-position: 18px 50%;
+        background-size: 24px;
+        background-repeat: no-repeat;
+      }
     }
   }
+
+
 
   textarea.field__control {
     min-height: fluid(163, 109);

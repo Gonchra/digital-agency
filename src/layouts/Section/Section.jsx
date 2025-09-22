@@ -2,7 +2,7 @@ import './Section.scss'
 import clsx from 'clsx'
 
 export default (props) => {
-  const { className, title, titleId, description, children } = props
+  const { className, title, titleId, description, actions, children } = props
 
   return (
     <section
@@ -17,6 +17,10 @@ export default (props) => {
           <div className="section__description">
             <p>{description}</p>
           </div>
+        )}
+
+        {actions && (
+          <div className="section__actions">{actions}</div>
         )}
       </header>
       <div className="section__body">{children}</div>

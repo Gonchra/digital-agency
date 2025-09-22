@@ -1,0 +1,34 @@
+.accordion-group {
+  &--2-columns {
+    column-gap: fluid-to-laptop(50, 40);
+
+    @include tablet-above {
+      column-count: 2;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: fluid(34, 24);
+    break-inside: avoid-column;
+
+    &--last-column-item {
+      @include tablet-above {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        @include abs-x;
+        content: "";
+        top: 100%;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-gray-15);
+      }
+    }
+  }
+}
