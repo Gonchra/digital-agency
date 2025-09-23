@@ -4,11 +4,11 @@
   display: grid;
   grid-template-columns: repeat(var(--gridColumns), 1fr);
   align-items: stretch;
+  gap: fluid-to-laptop(30, 20);
 
   &--2 {
     --gridColumns: 2;
 
-    gap: fluid-to-laptop(30, 20);
 
     @include tablet {
       --gridColumns: 1;
@@ -17,7 +17,6 @@
 
   &--3 {
     --gridColumns: 3;
-
 
     @include tablet {
       --gridColumns: 2;
@@ -29,6 +28,8 @@
   }
 
   &--bordered {
+    gap: 0;
+
     .grid__item {
       padding-top: 40px;
 

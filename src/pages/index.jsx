@@ -4,6 +4,7 @@ import Serve from '@/sections/Serve'
 import Works from '@/sections/Works'
 import Testimonials from '@/sections/Testimonials'
 import Questions from '@/sections/Questions'
+import Partners from '@/sections/Partners'
 
 export const metadata = {
   title: 'Home',
@@ -19,6 +20,7 @@ export default () => {
       <Works />
       <Testimonials />
       <Questions />
+      <Partners />
     </>
   )
 }
