@@ -1,0 +1,39 @@
+.banner {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: fluid-to-laptop(60, 50);
+    padding: fluid(130, 50) fluid(150, 24) 0;
+    background: linear-gradient(180deg, #1A1A1A -138.96%, #0F0F0F 100%),
+    url('../../assets/images/Banner/banner-bg.png') center/cover no-repeat;
+    border: var(--border);
+    border-radius: 20px;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(20, 10);
+    text-align: center;
+  }
+
+  &__title {
+    color: var(--color-white);
+  }
+
+  &__actions {
+    display: grid;
+    row-gap: fluid(20, 10);
+
+    &-title {
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      column-gap: fluid-to-laptop(10, 8);
+    }
+  }
+}

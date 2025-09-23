@@ -10,7 +10,7 @@ export default (props) => {
     target,
     label,
     /*
-     * '' (default) | gradient | icon-bg
+     * '' (default) | gradient | icon-bg | white
      * */
     mode = '',
     isLabelHidden = false,
