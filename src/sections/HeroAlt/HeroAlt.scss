@@ -1,0 +1,55 @@
+.hero-alt {
+  position: relative;
+  padding-bottom: calc(var(--section-padding-y) * 2);
+
+  &::after,
+  &::before {
+
+    background: url("../../assets/images/HeroAlt/hero-alt-edge.png");
+    position: absolute;
+    top: 0;
+    width: fluid-to-laptop(546, 381);
+    height: fluid-to-laptop(563, 469);
+    z-index: -1;
+
+    @include tablet-above {
+      content: "";
+    }
+  }
+
+  &::after, {
+    right: 0;
+  }
+
+  &__inner {
+    background: url("../../assets/images/HeroAlt/hero-alt-bg.png") center/cover no-repeat;
+    padding-block: fluid(100, 30);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include tablet {
+      row-gap: 14px;
+    }
+  }
+
+  &__title {
+    max-width: 1060px;
+
+    span {
+      color: var(--color-white);
+    }
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    max-width: 1060px;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+}

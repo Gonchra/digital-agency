@@ -1,4 +1,6 @@
 .banner {
+  padding-block: var(--section-padding-y);
+
   &__inner {
     display: flex;
     flex-direction: column;
