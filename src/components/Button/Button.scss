@@ -2,11 +2,13 @@
   display: inline-flex;
   align-items: center;
   column-gap: 0.3em;
-  padding: 18px 24px;
+  padding: fluid-to-laptop(18, 14) fluid-to-laptop(24, 20);
   color: var(--color-white);
   background-color: var(--color-gray-10);
   border: var(--border);
   border-radius: 100px;
+
+
 
   &__icon {
     display: flex;

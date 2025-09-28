@@ -1,4 +1,5 @@
 import HeroAlt from '@/sections/HeroAlt'
+import Services from '@/sections/Services'
 
 export const metadata = {
   title: 'Services',
@@ -23,6 +24,7 @@ export default () => {
   return (
     <>
       <HeroAlt title={title} description={description}/>
+      <Services />
     </>
   )
 }

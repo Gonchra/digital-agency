@@ -2,11 +2,7 @@ import './ServeCard.scss'
 import Button from '@/components/Button'
 
 const ServeCard = (props) => {
-  const {
-    title,
-    description,
-    imgSrc
-  } = props
+  const { title, description, imgSrc, price } = props
 
   return (
     <div className="serve-card">
@@ -26,13 +22,31 @@ const ServeCard = (props) => {
           <p>{description}</p>
         </div>
       </header>
-      <Button
-        className="serve-card__button"
-        label="Learn More"
-        iconName="arrow-white-right"
-        iconPosition="after"
-        hasFillIcon
-      />
+      <div className="serve-card__actions">
+        {price ? (
+          <>
+            <div className="serve-card__price">
+              Starts at Price: <span>${price}</span>
+            </div>
+            <Button
+              className="serve-card__button"
+              label="Book a Call"
+              mode="icon-bg"
+              iconName="arrow-white-right"
+              iconPosition="after"
+              hasFillIcon
+            />
+          </>
+        ) : (
+          <Button
+            className="serve-card__button"
+            label="Learn More"
+            iconName="arrow-white-right"
+            iconPosition="after"
+            hasFillIcon
+          />
+        )}
+      </div>
     </div>
   )
 }
