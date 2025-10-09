@@ -13,6 +13,47 @@
     @include tablet {
       --gridColumns: 1;
     }
+
+    &.grid--bordered {
+      gap: 0;
+
+      .grid__item {
+
+        @include tablet-above {
+          &:nth-child(odd) {
+            padding-right: fluid-to-laptop(50, 40);
+            border-right: var(--border);
+          }
+
+          &:nth-child(even) {
+            padding-left: fluid-to-laptop(50, 40);
+          }
+
+          &:not(:nth-last-child(-n + 2)) {
+            padding-bottom: fluid-to-laptop(50, 40);
+            border-bottom: var(--border);
+          }
+
+          &:nth-last-child(-n + 2) {
+            padding-top: fluid-to-laptop(50, 40);
+          }
+        }
+
+        @include tablet {
+          padding-block: 20px;
+          border-bottom: var(--border);
+
+          &:first-child {
+            padding-top: 0;
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+        }
+      }
+    }
   }
 
   &--3 {
@@ -25,76 +66,78 @@
     @include mobile {
       --gridColumns: 1;
     }
-  }
 
-  &--bordered {
-    gap: 0;
+    &.grid--bordered {
+      gap: 0;
 
-    .grid__item {
-      padding-top: 40px;
+      .grid__item {
+        padding-top: 40px;
 
-      &:not(:nth-child(3n)) {
-        @include tablet-above {
-          padding-right: fluid-to-laptop(50, 40);
-          border-right: var(--border);
+        &:not(:nth-child(3n)) {
+          @include tablet-above {
+            padding-right: fluid-to-laptop(50, 40);
+            border-right: var(--border);
+          }
         }
-      }
 
-      &:not(:nth-child(3n + 1)) {
-        @include tablet-above {
-          padding-left: fluid-to-laptop(50, 40);
+        &:not(:nth-child(3n + 1)) {
+          @include tablet-above {
+            padding-left: fluid-to-laptop(50, 40);
+          }
         }
-      }
 
-      &:not(:nth-last-child(-n+3)) {
-        @include tablet-above {
-          padding-bottom: fluid-to-laptop(50, 40);
-          border-bottom: var(--border);
+        &:not(:nth-last-child(-n+3)) {
+          @include tablet-above {
+            padding-bottom: fluid-to-laptop(50, 40);
+            border-bottom: var(--border);
+          }
         }
-      }
 
-      &:nth-last-child(-n+3) {
-        @include tablet-above {
-          padding-top: fluid-to-laptop(50, 40);
+        &:nth-last-child(-n+3) {
+          @include tablet-above {
+            padding-top: fluid-to-laptop(50, 40);
+          }
         }
-      }
 
-      &:not(:nth-child(2n)) {
-        @include tablet {
-          padding-right: 40px;
-          border-right: var(--border);
+        &:not(:nth-child(2n)) {
+          @include tablet {
+            padding-right: 40px;
+            border-right: var(--border);
+          }
+
+          @include mobile {
+            padding-right: 0;
+            border-right: none;
+          }
+        }
+
+        &:not(:nth-child(2n+1)) {
+          @include tablet {
+            padding-left: 40px;
+          }
+
+          @include mobile {
+            padding-left: 0;
+          }
+        }
+
+        &:not(:nth-last-child(-n+2)) {
+          @include tablet {
+            padding-bottom: 40px;
+            border-bottom: var(--border);
+          }
         }
 
         @include mobile {
-          padding-right: 0;
-          border-right: none;
-        }
-      }
-
-      &:not(:nth-child(2n+1)) {
-        @include tablet {
-          padding-left: 40px;
-        }
-
-        @include mobile {
-          padding-left: 0;
-        }
-      }
-
-      &:not(:nth-last-child(-n+2)) {
-        @include tablet {
-          padding-bottom: 40px;
-          border-bottom: var(--border);
-        }
-      }
-
-      @include mobile {
-        &:not(:last-child) {
-          padding-bottom: 40px;
-          border-bottom: var(--border);
+          &:not(:last-child) {
+            padding-bottom: 40px;
+            border-bottom: var(--border);
+          }
         }
       }
     }
   }
+
+
 
 }

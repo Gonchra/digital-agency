@@ -1,0 +1,15 @@
+.tabs {
+  display: grid;
+  row-gap: 50px;
+
+  @include tablet-above {
+    grid-template-columns: fluid-to-laptop(340, 268) auto;
+    column-gap: fluid-to-laptop(60, 50);
+  }
+
+  &__content {
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+}

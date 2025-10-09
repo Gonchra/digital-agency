@@ -1,0 +1,38 @@
+.tabs-navigation {
+  display: flex;
+  gap: fluid-to-laptop(20, 16);
+
+  @include tablet-above {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  &__button {
+    display: inline-flex;
+    background-color: transparent;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--color-white);
+    padding: fluid-to-laptop(24, 18) fluid-to-laptop(24, 20);
+    border-radius: fluid-to-laptop(12, 8);
+    border: var(--border);
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+    text-wrap: nowrap;
+    flex-shrink: 0;
+
+    @include hover {
+      background-color: var(--color-gray-10);
+    }
+
+    &.is-active {
+      background-color: var(--color-gray-10);
+      font-weight: 600;
+      pointer-events: none;
+    }
+  }
+}
