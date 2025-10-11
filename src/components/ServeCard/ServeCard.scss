@@ -60,12 +60,16 @@
   }
 
   &__actions {
+    @include flex-center;
+
     width: 100%;
     margin-top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     column-gap: 1rem;
+
+    &:has(.serve-card__price) {
+      justify-content: space-between;
+
+    }
   }
 
   &__button {
