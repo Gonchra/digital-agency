@@ -6,6 +6,7 @@ const ReasonCard = (props) => {
     title,
     description,
     imgSrc,
+    hasButton = false
   } = props
 
   return (
@@ -26,15 +27,17 @@ const ReasonCard = (props) => {
           <p>{description}</p>
         </div>
       </header>
-      <Button
-        className="reason-card__button"
-        href="/"
-        label="Learn More"
-        iconName="arrow-white-right"
-        mode="icon-bg"
-        hasFillIcon
-        iconPosition="after"
-      />
+      {hasButton && (
+        <Button
+          className="reason-card__button"
+          href="/"
+          label="Learn More"
+          iconName="arrow-white-right"
+          mode="icon-bg"
+          hasFillIcon
+          iconPosition="after"
+        />
+      )}
     </div>
   )
 }

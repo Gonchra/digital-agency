@@ -1,6 +1,6 @@
 .carousel {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   width: calc(var(--container-padding-x) * 2 + var(--container-width));
   mask-image: linear-gradient(
       to right,

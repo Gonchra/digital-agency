@@ -57,6 +57,7 @@ const Reasons = () => {
           <ReasonCard
             key={index}
             {...reasonsItem}
+            hasButton
           />
         ))}
       </Grid>
