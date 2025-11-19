@@ -1,0 +1,5 @@
+.showcase {
+  display: grid;
+  row-gap: 30px;
+  max-width: calc(1326px + var(--container-padding-x) * 2);
+}

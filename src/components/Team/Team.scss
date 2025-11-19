@@ -1,0 +1,40 @@
+.team {
+  --personImageSize: 60px;
+
+  width: 100%;
+  display: grid;
+  row-gap: 20px;
+  padding: fluid(30, 12);
+  border: var(--border);
+  border-radius: 20px;
+  color: var(--color-white);
+
+  @include laptop {
+    --personImageSize: 50px;
+  }
+
+  @include tablet {
+    --personImageSize: 40px;
+
+    row-gap: 10px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__avatars {
+    display: flex;
+  }
+
+  &__avatar {
+    width: var(--personImageSize);
+    border-radius: 50%;
+
+    &:not(:first-child) {
+      margin-left: calc(var(--personImageSize) / 2 * -1);
+    }
+  }
+}

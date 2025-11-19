@@ -1,5 +1,6 @@
 import HeroAlt from '@/sections/HeroAlt'
 import Features from '@/sections/Features'
+import Showcase from '@/sections/Showcase'
 
 export const metadata = {
   title: 'Projects',
@@ -19,6 +20,7 @@ export default () => {
     <>
       <HeroAlt title={title} description={description} />
       <Features />
+      <Showcase />
     </>
   )
 }
