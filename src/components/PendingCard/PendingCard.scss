@@ -1,0 +1,95 @@
+.pending-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background-image: linear-gradient(to left bottom, rgba(24, 24, 24, 0.31) 1%, rgba(102, 102, 102, 0.05) 46%, rgba(102, 102, 102, 0.1) 100%);  padding: fluid(50, 30);
+  border: var(--border);
+  border-radius: 20px;
+  height: 100%;
+
+  @include tablet {
+    row-gap: 20px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(16, 14);
+  }
+
+  &__image-wrapper {
+    @include flex-center;
+
+    padding: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--Grey-40, #666);
+    background: linear-gradient(137deg, #000 -17.15%, rgba(231, 231, 231, 0.69) 17.46%, rgba(255, 255, 255, 0.34) 44.62%, rgba(255, 255, 255, 0.22) 61.76%, #666 117.91%);
+    box-shadow: 0 0 8px 13px rgba(43, 43, 43, 0.25) inset;
+  }
+
+  &__title {
+    @include fluid-text(28, 20);
+
+    color: var(--color-white);
+    font-weight: 600;
+  }
+
+  &__info {
+    display: flex;
+    column-gap: fluid-to-laptop(50, 40);
+    padding: fluid-to-laptop(20, 16) fluid-to-laptop(30, 24);
+    border: var(--border);
+    border-radius: var(--border-radius-l);
+
+    @include tablet {
+      padding-block: 20px;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &-item {
+      width: 100%;
+
+      &:first-child {
+        padding-right: fluid-to-laptop(50, 40);
+        border-right: var(--border);
+
+        @include tablet {
+          padding-right: 0;
+          padding-bottom: 20px;
+          border-right: none;
+          border-bottom: var(--border);
+        }
+      }
+    }
+
+    &-title {
+      @include fluid-text(18, 14);
+
+      color: var(--color-white-50);
+      font-weight: 400;
+    }
+
+    &-description {
+      @include fluid-text(20, 16);
+
+      color: var(--color-white);
+    }
+  }
+
+  &__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(14, 10);
+    padding: fluid(40, 20);
+    border: var(--border);
+    border-radius: fluid-to-laptop(20, 16);
+
+    &-title {
+      @include fluid-text(22, 18);
+
+      color: var(--color-white);
+    }
+  }
+}
