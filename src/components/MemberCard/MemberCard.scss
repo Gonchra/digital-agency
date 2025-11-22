@@ -1,0 +1,88 @@
+.member-card {
+  width: 100%;
+  background: url("../../assets/images/HeroAlt/hero-alt-bg.png") center 50% no-repeat, var(--color-gray-06);
+  border: var(--border);
+  mask: linear-gradient(
+      to bottom,
+      var(--color-gray-12) 80%,
+      transparent 100%
+  );
+  border-radius: fluid-to-laptop(24, 20);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid-to-laptop(24, 16);
+    align-items: center;
+    padding: fluid(50, 30);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    padding: fluid-to-laptop(30, 24);
+
+    &::before {
+      width: fluid-to-laptop(140, 108);
+      height: fluid-to-laptop(140, 108);
+    }
+
+    &::after {
+      width: fluid-to-laptop(112, 88);
+      height: fluid-to-laptop(112, 88);
+    }
+
+    &::after,
+    &::before {
+      @include abs-center;
+
+      content: "";
+      border: var(--border);
+      border-radius: 50%;
+      mask: linear-gradient(
+          to bottom,
+          var(--color-gray-12) 80%,
+          transparent 100%
+      );
+    }
+  }
+
+  &__image {
+    border-radius: 50%;
+
+    width: fluid-to-laptop(80, 60);
+  }
+
+  &__title {
+    @include fluid-text(22, 16);
+
+    color: var(--color-white);
+  }
+
+  &__job-title {
+    color: var(--color-white);
+    text-align: center;
+    padding: fluid-to-laptop(14, 10) fluid-to-laptop(30, 20);
+    border: var(--border);
+    border-radius: 100px;
+    background: linear-gradient(101deg, #1F1F1F 2.68%, rgba(31, 31, 31, 0.00) 89.42%);
+  }
+
+  &__footer {
+    @include flex-center;
+
+    border-top: var(--border);
+    border-image: linear-gradient(
+        to right,
+        transparent,
+        var(--color-gray-12),
+        transparent
+    ) 1;
+    padding: fluid-to-laptop(24, 20) fluid-to-laptop(30, 24);
+  }
+
+  &__soc1als {
+    ul {
+      flex-wrap: nowrap;
+    }
+  }
+}
