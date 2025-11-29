@@ -1,0 +1,93 @@
+.award-card {
+  background: url("../../assets/images/HeroAlt/hero-alt-bg.png") center 0% no-repeat, var(--color-gray-06);
+  border: var(--border);
+  mask: linear-gradient(
+      to bottom,
+      var(--color-gray-12) 80%,
+      transparent 100%
+  );
+  border-radius: 20px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: fluid(50, 20);
+    padding: fluid(80, 50) fluid(50, 24);
+  }
+
+
+
+  &__image-wrapper {
+    @include flex-center;
+
+    position: relative;
+    margin-bottom: fluid(68, 48);
+
+    &::before,
+    &::after {
+      @include abs-center;
+
+      content: "";
+      background: linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.00) 56.6%);
+      border: var(--border);
+      border-radius: 50%;
+    }
+
+    &::before {
+      width: fluid(132, 86);
+      height: fluid(132, 86);
+
+    }
+
+    &::after {
+      width: fluid(84, 50);
+      height: fluid(84, 50);
+    }
+  }
+
+  &__image {
+    width: fluid(44, 26);
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--color-white);
+    padding: fluid(14, 8) fluid(18, 10);
+    border: var(--border);
+    border-radius: 100px;
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(20, 10);
+    text-align: center;
+  }
+
+  &__title {
+    @include fluid-text(24, 18);
+
+    color: var(--color-white);
+    font-weight: 400;
+  }
+
+  &__answer {
+    width: 100%;
+    display: grid;
+    row-gap: fluid-to-laptop(14, 10);
+    text-align: center;
+    padding: fluid(50, 20) fluid(50, 10);
+    background-color: var(--color-gray-06);;
+    border: var(--border);
+    border-radius: fluid-to-laptop(20, 16);
+
+    &-title {
+      @include fluid-text(24, 18);
+
+      color: var(--color-white);
+      font-weight: 400;
+    }
+  }
+}
