@@ -2,7 +2,7 @@ import './ServeCard.scss'
 import Button from '@/components/Button'
 
 const ServeCard = (props) => {
-  const { title, description, imgSrc, price } = props
+  const { title, description, imgSrc, price, isExtra = false } = props
 
   return (
     <div className="serve-card">
@@ -40,7 +40,7 @@ const ServeCard = (props) => {
         ) : (
           <Button
             className="serve-card__button"
-            label="Learn More"
+            label={!isExtra ? "Learn More" : "View Page"}
             iconName="arrow-white-right"
             iconPosition="after"
             hasFillIcon

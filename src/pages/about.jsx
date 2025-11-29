@@ -3,6 +3,7 @@ import HeroAlt from '@/sections/HeroAlt'
 import Members from '@/sections/Members'
 import Achievements from '@/sections/Achievements'
 import Awards from '@/sections/Awards'
+import Extra from '@/sections/Extra'
 
 export const metadata = {
   title: 'About',
@@ -23,6 +24,7 @@ export default () => {
       <Members />
       <Achievements />
       <Awards />
+      <Extra />
     </>
   )
 }

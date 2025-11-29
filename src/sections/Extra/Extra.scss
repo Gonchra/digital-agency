@@ -1,0 +1,14 @@
+.extra {
+  &__inner {
+    display: grid;
+    row-gap: fluid-to-laptop(40, 30);
+  }
+
+  &__title {
+    @include fluid-text(24, 20);
+
+    color: var(--color-white-75);
+    font-weight: 400;
+    text-align: center;
+  }
+}
