@@ -28,6 +28,11 @@
     flex-direction: column;
     row-gap: 20px;
 
+    &:has(.hero-alt__image) {
+      padding-block: 0;
+      align-items: center;
+    }
+
     @include tablet {
       row-gap: 14px;
     }
@@ -51,5 +56,10 @@
     @include tablet {
       text-align: center;
     }
+  }
+
+  &__image {
+    width: fluid(813, 390);
+    height: fluid(563, 258);
   }
 }
