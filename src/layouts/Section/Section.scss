@@ -3,6 +3,23 @@
   row-gap: fluid(100, 50);
   padding-block: var(--section-padding-y);
 
+  &--small {
+    padding-block: calc(var(--section-padding-y) / 2);
+    row-gap: fluid(50, 30);
+
+    .section {
+      &__header {
+        row-gap: fluid-to-laptop(14, 10);
+      }
+
+      &__title {
+        @include fluid-text(24, 18);
+
+        color: var(--color-white);
+      }
+    }
+  }
+
   &__header {
     display: flex;
     flex-direction: column;

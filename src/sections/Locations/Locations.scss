@@ -1,0 +1,15 @@
+.locations {
+  padding: fluid(50, 24);
+  border: var(--border);
+  border-radius: 20px;
+
+  &__list {
+    @include flex-center;
+
+    column-gap: fluid-to-laptop(50, 40);
+
+    @include tablet {
+      row-gap: 20px;
+    }
+  }
+}

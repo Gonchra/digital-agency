@@ -2,11 +2,11 @@ import './Section.scss'
 import clsx from 'clsx'
 
 export default (props) => {
-  const { className, title, titleId, description, actions, children } = props
+  const { className, title, titleId, description, actions, isSmallFontSize, children } = props
 
   return (
     <section
-      className={clsx('section', 'container', className)}
+      className={clsx('section', 'container', className, isSmallFontSize && "section--small")}
       aria-labelledby={titleId}
     >
       <header className="section__header">
