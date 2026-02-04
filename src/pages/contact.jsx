@@ -3,6 +3,7 @@ import heroAltImgSrc from "@/assets/images/HeroAlt/hero-alt-logo.png"
 import ContactBanner from '@/sections/ContactBanner'
 import ContactUsForm from '@/sections/ContactUsForm'
 import Locations from '@/sections/Locations'
+import OnlineForm from '@/sections/OnlineForm'
 
 export const metadata = {
   title: 'Contact Us',
@@ -53,6 +54,7 @@ export default () => {
         contactItems={telItems}
       />
       <Locations />
+      <OnlineForm />
     </>
   )
 }

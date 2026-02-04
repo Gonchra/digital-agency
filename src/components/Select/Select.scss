@@ -1,0 +1,144 @@
+.select {
+  --selectButtonArrowIconUrl: url('../../assets/images/Select/arrow-down-white.svg');
+  --selectButtonArrowIconSize: #{fluid-to-laptop(24, 20)};
+  --selectButtonPaddingX: #{fluid-to-laptop(22, 18)};
+
+  display: grid;
+  row-gap: fluid(14, 8);
+  flex-shrink: 0;
+
+  &__label {
+    font-size: fluid-to-laptop(18, 16);
+    color: var(--color-white);
+  }
+
+  &__original-control,
+  &__button {
+    width: 100%;
+    max-width: 445px;
+  }
+
+  &__original-control {
+    appearance: none;
+    padding-left: var(--selectButtonPaddingX);
+    padding-right: calc(var(--selectButtonArrowIconSize) + var(--selectButtonPaddingX));
+    background-image: var(--selectButtonArrowIconUrl);
+    background-position: calc(100% -  var(--selectButtonPaddingX)) 50%;
+    background-size: var(--selectButtonArrowIconSize);
+    background-repeat: no-repeat;
+    background-color: var(--color-gray-06);
+    color: var(--color-white-50);
+    border-radius: 100px;
+    border: var(--border);
+    padding-block: fluid-to-laptop(20, 16);
+    padding-inline: var(--selectButtonPaddingX);
+
+    @include mobile-above {
+      @include visually-hidden;
+    }
+
+    &:disabled {
+      & + .select__body {
+        @include disabled;
+
+        * {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__button,
+  &__option {
+    user-select: none;
+    cursor: pointer;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 8px;
+    border: var(--border);
+    border-radius: 100px;
+    padding-block: fluid-to-laptop(20, 16);
+    padding-inline: var(--selectButtonPaddingX);
+    transition-duration: var(--transition-duration);
+
+    @include mobile {
+      @include visually-hidden;
+    }
+
+    &::after {
+      @include square(var(--selectButtonArrowIconSize));
+
+      content: "";
+      background: var(--selectButtonArrowIconUrl) center/contain no-repeat;
+      transition-duration: inherit;
+    }
+
+    &.is-expanded {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    display: grid;
+    row-gap: 4px;
+    max-width: 445px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    overscroll-behavior: none;
+    padding: 4px;
+    background-color: var(--color-gray-06);
+    border: var(--border);
+    border-radius: 20px;
+    transition-duration: var(--transition-duration);
+
+    &:not(.is-expanded) {
+      @include hide;
+
+      scale: 0;
+    }
+  }
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    padding: 10px;
+    border: var(--border);
+    border-radius: inherit;
+
+    @include hover {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    &.is-selected {
+      color: var(--color-white);
+
+      &::after {
+        content: "✔";
+      }
+    }
+
+    &.is-current {
+      border-color: var(--color-white);
+    }
+  }
+}

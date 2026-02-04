@@ -1,29 +1,25 @@
 .field {
-  position: relative;
+  display: grid;
+  row-gap: fluid(14, 8);
   width: 100%;
-  max-width: 434px;
+  max-width: 445px;
 
-  &:has(.field__control:not(:placeholder-shown)) .field__label {
-    scale: 0.8;
-    translate: -2.75em -3em;
-    color: var(--color-white);
+  &:has(textarea) {
+    width: auto;
+    max-width: none;
   }
 
   &__label {
     font-size: fluid-to-laptop(18, 16);
-    color: var(--color-gray-40);
-    position: absolute;
-    top: 50%;
-    left: 60px;
-    translate: 0 -50%;
+    color: var(--color-white);
   }
 
   &__control {
     width: 100%;
-    padding: 18px 24px;
-    height: 60px;
-    background-color: var(--color-gray-10);
+    padding: fluid-to-laptop(20, 16) fluid-to-laptop(24, 20);
+    height: fluid(67, 53);
     color: var(--color-white);
+    background-color: var(--color-gray-06);
     border: var(--border);
     border-radius: 100px;
 
@@ -39,10 +35,10 @@
   }
 
 
-
   textarea.field__control {
-    min-height: fluid(163, 109);
-    padding-block: fluid-to-laptop(20, 16);
+    min-height: fluid(153, 104);
+    padding: fluid-to-laptop(20, 16) fluid-to-laptop(24, 20);
     resize: vertical;
+    border-radius: 20px;
   }
 }
