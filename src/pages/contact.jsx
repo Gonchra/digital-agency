@@ -4,6 +4,7 @@ import ContactBanner from '@/sections/ContactBanner'
 import ContactUsForm from '@/sections/ContactUsForm'
 import Locations from '@/sections/Locations'
 import OnlineForm from '@/sections/OnlineForm'
+import JoinUs from '@/sections/JoinUs'
 
 export const metadata = {
   title: 'Contact Us',
@@ -55,6 +56,7 @@ export default () => {
       />
       <Locations />
       <OnlineForm />
+      <JoinUs />
     </>
   )
 }
