@@ -1,0 +1,40 @@
+.online-card {
+  display: grid;
+  row-gap: fluid(44, 40);
+  padding: fluid(50, 24);
+  border: var(--border);
+  border-radius: 20px;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(30, 20);
+  }
+
+  &__title {
+    color: var(--color-white);
+    font-weight: 400;
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    &::after {
+      @include abs-center;
+
+      content: "";
+      width: fluid(74, 52);
+      height: fluid(74, 52);
+      background-image: linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.00) 100%);
+      border: var(--border);
+      border-radius: 50%;
+    }
+  }
+
+  &__image {
+    color: var(--color-white);
+    width: fluid-to-laptop(34, 26);
+    height: fluid-to-laptop(34, 26);
+  }
+}

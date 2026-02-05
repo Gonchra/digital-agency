@@ -16,6 +16,7 @@ export default (props) => {
     placeholder,
     isRequired,
     inputMode,
+    isLabelHidden = false,
     mask,
   } = props
 
@@ -29,9 +30,11 @@ export default (props) => {
 
   return (
     <div className={clsx('field', className)}>
-      <label className="field__label" htmlFor={id}>
-        {label}
-      </label>
+      {!isLabelHidden && (
+        <label className="field__label" htmlFor={id}>
+          {label}
+        </label>
+      )}
       <Component
         className="field__control"
         id={id}

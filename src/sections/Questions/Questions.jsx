@@ -28,6 +28,7 @@ const Questions = () => {
       label="Search"
       type="search"
       placeholder="Search"
+      isLabelHidden
       className="section__field"
     />
   )
