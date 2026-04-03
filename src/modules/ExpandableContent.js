@@ -1,19 +1,19 @@
-const rootSelector = "[data-js-expandable-content]"
+const rootSelector = '[data-js-expandable-content]'
 
 class ExpandableContent {
   selectors = {
     root: rootSelector,
-    button: "[data-js-expandable-content-button]",
-    content: "[data-js-expandable-content-content]"
+    button: '[data-js-expandable-content-button]',
+    content: '[data-js-expandable-content-content]',
   }
 
   stateClasses = {
-    isExpanded: "is-expanded"
+    isExpanded: 'is-expanded',
   }
 
   animationParams = {
     duration: 500,
-    easing: "ease",
+    easing: 'ease',
   }
 
   constructor(rootElement) {
@@ -23,44 +23,53 @@ class ExpandableContent {
     this.bindEvents()
   }
 
-   toggle() {
-    const {offsetHeight, scrollHeight} = this.contentElement
+  toggle() {
+    const { offsetHeight, scrollHeight } = this.contentElement
+    const maxHeight = getComputedStyle(this.rootElement).getPropertyValue('--initialMaxHeight')
 
-    const isExpanded = this.rootElement.classList.contains("is-expanded")
+    const isExpanded = this.rootElement.classList.contains('is-expanded')
 
     this.rootElement.classList.toggle(this.stateClasses.isExpanded, !isExpanded)
-    this.buttonElement.classList.toggle(this.stateClasses.isExpanded, !isExpanded)
+    this.buttonElement.classList.toggle(
+      this.stateClasses.isExpanded,
+      !isExpanded
+    )
 
-    if(!isExpanded) {
-      this.buttonElement.innerHTML = "Show Less"
-      this.contentElement.animate([
-        {
-          maxHeight: offsetHeight + "px"
-        },
-        {
-          maxHeight: scrollHeight + "px"
-        }
-      ], this.animationParams)
+    if (!isExpanded) {
+      this.buttonElement.innerHTML = 'Show Less'
+      this.contentElement.animate(
+        [
+          {
+            maxHeight: offsetHeight + 'px',
+          },
+          {
+            maxHeight: scrollHeight + 'px',
+          },
+        ],
+        this.animationParams
+      )
     } else {
-      this.buttonElement.innerHTML = "Show More"
-      this.contentElement.animate([
-        {
-          maxHeight: scrollHeight + "px"
-        },
-        {
-          maxHeight: "201px"
-        }
-      ], this.animationParams)
+      this.buttonElement.innerHTML = 'Show More'
+      this.contentElement.animate(
+        [
+          {
+            maxHeight: scrollHeight + 'px',
+          },
+          {
+            maxHeight: maxHeight,
+          },
+        ],
+        this.animationParams
+      )
     }
   }
 
   onButtonClick = () => {
-      this.toggle()
+    this.toggle()
   }
 
-
   bindEvents() {
-    this.buttonElement.addEventListener("click", this.onButtonClick)
+    this.buttonElement.addEventListener('click', this.onButtonClick)
   }
 }
 

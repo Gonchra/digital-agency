@@ -1,10 +1,11 @@
 import './Badge.scss'
+import clsx from 'clsx'
 
 const Badge = (props) => {
-  const {imgSrc, description} = props
+  const {imgSrc, description, className} = props
 
   return (
-    <div className="badge">
+    <div className={clsx("badge", className)}>
       <div className="badge__image-wrapper">
         <img
           className="badge__image"

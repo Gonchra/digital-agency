@@ -4,7 +4,7 @@ const HeroAlt = (props) => {
   const {
     title,
     description,
-    imgSrc
+    imgSrc,
   } = props
 
   return (
